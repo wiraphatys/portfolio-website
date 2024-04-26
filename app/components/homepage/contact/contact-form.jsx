@@ -39,7 +39,12 @@ function ContactForm() {
     const options = { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY };
 
     try {
-      const res = await emailjs.send(serviceID, templateID, input, options);
+      const res = await emailjs.send(serviceID, templateID, {
+        from_name: input.name,
+        to_name: "Wiraphat Yodsri",
+        message: input.message,
+        reply_to: input.email,
+      }, options);
 
       if (res.status === 200) {
         toast.success('Message sent successfully!');
@@ -116,10 +121,9 @@ function ContactForm() {
               </p>
             }
             <button
-              className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-5 md:px-12 py-2.5 md:py-3 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold cursor-not-allowed opacity-50"
+              className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-5 md:px-12 py-2.5 md:py-3 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
               role="button"
               onClick={handleSendMail}
-              disabled
             >
               <span>Send Message</span>
               <TbMailForward className="mt-1" size={18} />
