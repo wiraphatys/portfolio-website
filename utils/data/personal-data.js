@@ -10,5 +10,5 @@ export const personalData = {
   facebook: 'https://www.facebook.com/wiraphat.wrp/',
   linkedIn: 'https://www.linkedin.com/in/ywiraphat/',
   devUsername: "wiraphatys",
-  resume: "https://drive.google.com/file/d/1doiBCZjgyJ5FN7c7tv-fiqDKQFdbqwfD/view?usp=sharing"
+  resume: "https://drive.google.com/file/d/1Hw0W5_nujhTrTRRLl0v-6nRMVHbUoPF6/view?usp=sharing"
 }
